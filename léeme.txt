@@ -1,0 +1,33 @@
+Para ejecutar el algoritmo:
+
+Ejecuta "Algoritmo.ipynb".
+
+-------------------------
+Para añadir más documentos al conjunto de entrenamiento:
+
+Añade tantos archivos de entrenamiento como quieras a la carpeta de la categoría 
+(dentro de la carpeta "conjunto_entrenamiento") en formato ".txt".
+
+-------------------------
+Para crear una nueva categoría:
+
+Símplemente crea una nueva carpeta dentro de la carpeta "conjunto_entrenamiento" 
+y añade tantos archivos de entrenamiento a la categoría como quieras (en formato ".txt").
+
+-------------------------
+Para clasificar un nuevo documento:
+
+Símplemente colócalo en formato ".txt" dentro de la carpeta "conjunto_prueba".
+
+-------------------------
+Para elegir tus propias palabras clave (por categoría):
+
+Modifica el archivo "palabras_clave.csv" que se encuentra en la carpeta "csv".
+El primer valor debe ser la categoría y, separado por una coma, el segundo cada palabra clave separado también por comas 
+(siempre dentro de las comillas que delimitan el segundo valor).
+
+-------------------------
+Para auto-generar las palabras clave en base a su frecuencia si no existe la categoría en el archivo de palabras clave personalizadas:
+
+Modifica el valor de la variable "usar_autogenerado_si_procede" al principio del código del algoritmo a "True" 
+(o "False" en caso de no desear generar palabras clave nunca).
