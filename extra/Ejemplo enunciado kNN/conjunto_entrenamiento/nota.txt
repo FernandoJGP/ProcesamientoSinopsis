@@ -1,0 +1,4 @@
+En este ejemplo no se especifica la categoría de ninguno de los archivos, 
+por tanto vamos a suponer que cada uno tiene su propia categoría.
+
+En cualquier caso, esto no afecta a las pruebas que se van a realizar.

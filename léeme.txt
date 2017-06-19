@@ -3,6 +3,15 @@ Para ejecutar el algoritmo:
 Ejecuta "Algoritmo.ipynb".
 
 -------------------------
+Carpeta "extra":
+
+La carpeta "extra" contiene las palabras clave y los conjuntos de entrenamiento y pruebas 
+de cada uno de los ejemplos dados en el documento, manteniendo la estructura de carpetas, 
+para verificar que el algoritmo funciona correctamente.
+
+También contiene un back-up de los archivos usados en el proyecto a entregar.
+
+-------------------------
 Para añadir más documentos al conjunto de entrenamiento:
 
 Añade tantos archivos de entrenamiento como quieras a la carpeta de la categoría 
