@@ -11,11 +11,11 @@
 
 # Los géneros que tendrá en cuenta el algoritmo son: ___acción___, ___comedia___, ___terror___, ___bélico___ y __western__.
 
-# Los __archivos que contienen la sinopsis__ de las películas (o equivalente, pudiendo ser también un breve resumen de la primera parte de la película) estarán distribuídos de la siguiente forma: __1)__ Si forman parte del conjunto de pruebas estarán dentro de la carpeta del conjunto de prueba sin más, que será la carpeta en la que el algoritmo, una vez entrenado, buscará las sinopsis allí presentes para categorizarlas __2)__ Si forman parte del conjunto de entrenamiento estarán dentro de la carpeta del conjunto de entrenamiento y __a su vez__ dentro de una carpeta que indique su género.
+# Los __archivos que contienen la sinopsis__ de las películas (o equivalente, pudiendo ser también una pequeña reseña o breve resumen de la primera parte de la película) estarán distribuídos de la siguiente forma: __1)__ Si forman parte del conjunto de pruebas estarán dentro de la carpeta del conjunto de prueba sin más, que será la carpeta en la que el algoritmo, una vez entrenado, buscará las sinopsis allí presentes para categorizarlas __2)__ Si forman parte del conjunto de entrenamiento estarán dentro de la carpeta del conjunto de entrenamiento y __a su vez__ dentro de una carpeta que indique su género.
 
 # Inicialmente se planteó utilizar _html_ como __formato__ para almacenar los archivos con los que vamos a trabajar pero, dado que no ha sido posible encontrar una fuente común para extraer todas las sinopsis, finalmente se almacenarán como __texto plano__, trabajando de esta manera con archivos _.txt_.
 
-# __Los conocimientos requeridos por parte del usuario__ que ejecutará el algoritmo __son mínimos__: tan sólo necesita __colocar__ los textos, en el formato adecuado, en la carpeta indicada y __ejecutar__ el algoritmo en sí. Únicamente se requiere mayor interacción por parte del usuario si desea cambiar si desea cambiar las palabras clave, puesto que entonces deberá modificar el fichero "_.csv_" indicado.
+# __Los conocimientos requeridos por parte del usuario__ que ejecutará el algoritmo __son mínimos__: tan sólo necesita __colocar__ los textos, en el formato adecuado, en la carpeta indicada y __ejecutar__ el algoritmo en sí. Únicamente se requiere mayor interacción por parte del usuario si desea cambiar las palabras clave, puesto que entonces deberá modificar el fichero "_.csv_" indicado.
 
 # ---
 
@@ -55,7 +55,7 @@ umbral_longitud_autogenerado = 5
 
 import os # Nos ayudaremos de la librería "os" para leer ficheros y carpetas.
 
-categorías = {elemento for elemento in os.listdir(ruta_conjunto_entrenamiento) if os.path.isdir(ruta_conjunto_entrenamiento + "/" + elemento)} # "os.listdir" devuelve las el contenido de un directorio dado, pero además queremos filtrar que sea un directorio, por eso lo procesamos y le aplicamos el filtro de que sea un directorio.
+categorías = {elemento for elemento in os.listdir(ruta_conjunto_entrenamiento) if os.path.isdir(ruta_conjunto_entrenamiento + "/" + elemento)} # "os.listdir" devuelve las el contenido de un directorio dado, pero además queremos filtrar que sea un directorio, por tanto lo procesamos y le aplicamos el filtro de que sea un directorio.
 
 print("Categorías: %s" % (categorías))
 
@@ -988,6 +988,7 @@ aplicar_knn_archivos_prueba()
 #     <li>Leer y guardar csv: http://ccm.net/faq/2091-python-read-and-write-csv-files y https://stackoverflow.com/a/21780875</li>
 #     <li>Leer csv: https://stackoverflow.com/a/24662707</li>
 #     <li>Guardar csv: https://stackoverflow.com/a/41233907</li>
+#     <li>Ordenar lista: https://stackoverflow.com/a/23177099</li>
 # </ul>
 
 # Y también una lista de consultas que hemos podido realizar para pequeñas consultas __muy__ específicas, que creemos que no tienen la menor importancia pero las indicamos igualmente:
@@ -1016,5 +1017,53 @@ aplicar_knn_archivos_prueba()
 # </ul>
 
 # Remarcar que, como expresamos al inicio del documento, en bastantes ocasiones ha sido complicado (o directamente imposible) encontrar una sinopsis que contuviese de 200 a 300 palabras, por lo que en algunas ocasiones hemos tenido que utilizar la primera parte del argumento de una película que ofrecen fuentes como _wikipedia_.
+
+# ---
+
+# ## Parte X: Manual de usuario
+
+# ### Parte X-A: Ejecución del código
+
+# Para ejecutar el algoritmo: Pulsa __"Cell > Run All"__ en la barra de tareas (parte superior de la pantalla) o __"Kernel > Restart & Run All"__ para borrar todos las variables residuales y ejecutar el algoritmo.
+
+# Se adjunta también un fichero __".py"__, autogenerado a partir de este fichero, que también puede ejecutarse teniendo haciendo doble click Python instalado.
+
+# Recomendamos el primer método, ya que hemos trabajado con __Jupyter notebook__ (tanto para código como para "documentación").
+
+# ### Parte X-B: Estructura de las carpetas
+
+# Las carpetas "__conjunto_entrenamiento__" y "__conjunto_prueba__" contienen los ficheros del conjunto de entrenamiento y del conjunto de prueba respectivamente.
+
+# Dentro de "conjunto_entrenamiento" hay una carpeta por cada categoría.
+
+# La carpeta "__csv__" contiene los __resultados del procesamiento de datos__ para Naive Bayes y kNN __además del csv donde el usuario podrá definir palabras clave para cada categoría__.
+
+# La carpeta "__extra__" contiene carpetas de utilidad para realizar pruebas, estas son:
+# 
+# <ul>
+# <li>Una carpeta con un backup de las carpetas "conjunto_prueba", "conjunto_entrenamiento" y "csv" tales como se pedían en el enunciado del trabajo.</li>
+# <li>Una carpeta las carpetas "conjunto_prueba", "conjunto_entrenamiento" y "csv" (esta última contiene un csv con las palabras claves adecuadas) para recrear el ejemplo de Naive Bayes del enunciado del trabajo y así comprobar si está bien ese algoritmo.</li>
+# <li>Una carpeta las carpetas "conjunto_prueba", "conjunto_entrenamiento" y "csv" (esta última contiene un csv con las palabras claves adecuadas) para recrear el ejemplo de kNN del enunciado del trabajo y así comprobar si está bien ese algoritmo.</li>
+# </ul>
+
+# ### Parte X-C: Cómo añadir más documentos al conjunto de entrenamiento:
+
+# Se pueden añadir tantos archivos de entrenamiento como se quiera a la carpeta de la categoría (dentro de la carpeta "conjunto_entrenamiento") en formato ".txt".
+
+# ### Parte X-D: Cómo crear una nueva categoría:
+
+# Símplemente crea una nueva carpeta dentro de la carpeta "conjunto_entrenamiento" y añade tantos archivos de entrenamiento a la categoría como quieras (en formato ".txt").
+
+# ### Parte X-E: Cómo clasificar un documento:
+
+# Símplemente colócalo en formato ".txt" dentro de la carpeta "conjunto_prueba".
+
+# ### Parte X-F: Cómo elegir tus propias palabras clave (por categoría):
+
+# Modifica el archivo "palabras_clave.csv" que se encuentra en la carpeta "csv". El primer valor debe ser la categoría y, separado por una coma, el segundo cada palabra clave separado también por comas (siempre dentro de las comillas que delimitan el segundo valor).
+
+# ### Parte X-G: Cómo auto-generar las palabras clave en base a su frecuencia si no existe la categoría en el archivo de palabras clave personalizadas:
+
+# Modifica el valor de la variable "usar_autogenerado_si_procede" al principio del código del algoritmo a "True" (o "False" en caso de no desear generar palabras clave nunca).
 
 input('Presiona INTRO para salir')

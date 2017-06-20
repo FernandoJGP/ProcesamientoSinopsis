@@ -1,7 +1,10 @@
 Para ejecutar el algoritmo:
 
-Ejecuta "Algoritmo.ipynb" (necesitas Jupyter Notebook, entonces 
-haz click en "Cell > Run All" en la parte superior).
+Abra el "Algoritmo.ipynb", para el cual se necesita el material de clase, Jupyter Notebook, entonces 
+haga click en "Cell > Run All" en la parte superior).
+
+También se adjunta un archivo "Algoritmo.py", pero se ha trabajado sobre el otro y, 
+por tanto, se aconseja el uso del otro (el ".py" se ha autogenerado).
 
 -------------------------
 Carpeta "extra":
