@@ -1,6 +1,7 @@
 Para ejecutar el algoritmo:
 
-Ejecuta "Algoritmo.ipynb".
+Ejecuta "Algoritmo.ipynb" (necesitas Jupyter Notebook, entonces 
+haz click en "Cell > Run All" en la parte superior).
 
 -------------------------
 Carpeta "extra":
